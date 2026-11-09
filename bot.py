@@ -45,12 +45,16 @@ SPALTEN = ["ID", "Coin", "Chart", "Richtung", "Signal_Kerze", "Einstieg_Zeit", "
 # ===== HILFSFUNKTIONEN =====
 def telegram(text):
     print(text)
-    if TOKEN and CHAT_ID:
-        try:
-            requests.post(f"https://api.telegram.org/bot{TOKEN}/sendMessage",
-                          data={"chat_id": CHAT_ID, "text": text}, timeout=20)
-        except Exception as e:
-            print("Telegram-Fehler:", e)
+    if not TOKEN or not CHAT_ID:
+        print("Telegram: Secrets fehlen! TOKEN gesetzt:", bool(TOKEN), "| CHAT_ID gesetzt:", bool(CHAT_ID))
+        return
+    try:
+        antwort = requests.post(f"https://api.telegram.org/bot{TOKEN}/sendMessage",
+                                data={"chat_id": CHAT_ID, "text": text}, timeout=20)
+        print("Telegram:", antwort.status_code, antwort.text[:200])
+    except Exception as e:
+        print("Telegram-Fehler:", e)
+
 
 
 def lade_status():
