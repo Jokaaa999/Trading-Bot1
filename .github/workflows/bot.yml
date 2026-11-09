@@ -39,10 +39,18 @@ jobs:
           TEST_NACHRICHT: ${{ github.event_name == 'workflow_dispatch' && inputs.test && '1' || '0' }}
         run: python bot.py
 
+      - name: Regenbogen-Bot ausführen
+        if: always()
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TEST_NACHRICHT: ${{ github.event_name == 'workflow_dispatch' && inputs.test && '1' || '0' }}
+        run: python bot_regenbogen.py
+
       - name: Ergebnisse speichern
         if: always()
         run: |
           git config user.name "paper-bot"
           git config user.email "paper-bot@users.noreply.github.com"
-          git add daten || true
+          git add daten daten_regenbogen || true
           git diff --cached --quiet || (git commit -m "Bot-Lauf $(date -u +'%Y-%m-%d %H:%M') UTC" && git pull --rebase && git push)
