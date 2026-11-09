@@ -1,4 +1,4 @@
 yfinance
-pandas
+pandas<4
 numpy
 requests
