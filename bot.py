@@ -28,7 +28,7 @@ CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
 TEST = os.environ.get("TEST_NACHRICHT", "0") == "1"
 
 # ===== EINSTELLUNGEN =====
-STARTKAPITAL, RISIKO, MAX_OFFEN = 1000, 0.02, 3
+STARTKAPITAL, RISIKO, MAX_OFFEN = 2000, 0.02, 3
 SL_ATR, MM = 2.0, 0.005  # Stop = 2 x ATR, Wartungsmarge für Liquidation ca. 0,5 %
 GEBUEHR_SEITE = {"ETH": 0.0005, "BNB": 0.0005, "XRP": 0.0, "SOL": 0.0}
 KOMBIS = [("XRP", "1h"), ("ETH", "1h"), ("ETH", "4h"), ("XRP", "4h"), ("SOL", "4h"), ("BNB", "4h")]
