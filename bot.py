@@ -206,6 +206,8 @@ def main():
     print(f"Bot-Lauf {jetzt:%d.%m.%Y %H:%M} Uhr")
     status = lade_status()
     log = pd.read_csv(LOGDATEI) if os.path.exists(LOGDATEI) else pd.DataFrame(columns=SPALTEN)
+    # Ausstiegs-Spalten als Text/gemischt zulassen (sonst Fehler beim Schließen eines Trades)
+    log = log.astype({c: object for c in ["Status", "Ausstieg_Zeit", "Ausstieg", "R", "Ergebnis_$"] if c in log.columns})
 
     # Marktdaten und Signale
     markt = {}
