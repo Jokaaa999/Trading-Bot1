@@ -1,1 +1,2 @@
 ID,Coin,Chart,Richtung,Signal_Kerze,Einstieg_Zeit,Einstieg,SL,TP,Stop_pct,Risiko_$,Position_$,Hebel,Margin_$,Liq_Preis,Status,Ausstieg_Zeit,Ausstieg,R,Ergebnis_$,Regenbogen
+ETH_1h_2026-11-16T15:00:00+01:00,ETH,1h,LONG,2026-11-16T15:00:00+01:00,2026-11-16T16:00:00+01:00,1844.3499755859375,1806.13427734375,1958.9970703124998,2.0720415728065187,40.0,1930.46,20,96.52,1761.3542266845702,offen,,,,,0.003
