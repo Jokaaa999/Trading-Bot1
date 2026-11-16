@@ -1,1 +1,2 @@
 ID,Coin,Chart,Richtung,Signal_Kerze,Einstieg_Zeit,Einstieg,SL,TP,Stop_pct,Risiko_$,Position_$,Hebel,Margin_$,Liq_Preis,Status,Ausstieg_Zeit,Ausstieg,R,Ergebnis_$
+XRP_1h_2026-11-16T10:00:00+01:00,XRP,1h,SHORT,2026-11-16T10:00:00+01:00,2026-11-16T11:00:00+01:00,0.942799985408783,0.963914258139474,0.8794571672167096,2.239528325993374,40.0,1786.09,20,89.3,0.9852259847521782,offen,,,,
